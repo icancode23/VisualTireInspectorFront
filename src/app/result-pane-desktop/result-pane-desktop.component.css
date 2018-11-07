@@ -1,0 +1,81 @@
+.imagePanel{
+    height: auto; 
+  background: #37474f;
+  overflow-y: "hidden";
+}
+.result-main-pane{
+    background: white;
+    overflow-y: auto;
+    height: auto;
+    padding: .5rem;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+}
+.result-main-pane::-webkit-scrollbar {
+    display: none;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .main-row-body{
+        margin-bottom:0px;
+        height: calc(100vh - 50px);
+        position: relative;
+        width: 100%;
+        backface-visibility: hidden;
+        will-change: overflow;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .main-row-body{
+        margin-bottom:0px;
+        height: calc(100vh - 50px);
+        position: relative;
+        width: 100%;
+        backface-visibility: hidden;
+        will-change: overflow;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .main-row-body{
+        margin-bottom:0px;
+        display: flex;
+        overflow: hidden;
+        height: calc(100vh - 50px);
+        position: relative;
+        width: 100%;
+        backface-visibility: hidden;
+        will-change: overflow;
+    }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .main-row-body{
+        margin-bottom:0px;
+        display: flex;
+        overflow: hidden;
+        height: calc(100vh - 50px);
+        position: relative;
+        width: 100%;
+        backface-visibility: hidden;
+        will-change: overflow;
+    }
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .main-row-body{
+        margin-bottom:0px;
+        display: flex;
+        overflow: hidden;
+        height: calc(100vh - 50px);
+        position: relative;
+        width: 100%;
+        backface-visibility: hidden;
+        will-change: overflow;
+    }
+}

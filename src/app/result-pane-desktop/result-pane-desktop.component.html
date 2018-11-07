@@ -1,0 +1,18 @@
+<div class="row main-row-body">
+  <div  class="col s12 m4 l4 imagePanel">
+    <app-image-panel [selectedImage]="selectedImage" [searchResultList]="searchResultList"></app-image-panel>
+  </div>
+  <div id="results" class="col s12 m8 l8 result-main-pane center-align" >
+    <div *ngIf="searchResultList">
+    <h5>Look what we found for you!</h5>
+  <div class="row">
+      <app-search-result *ngFor="let item of searchResultList" [result]="item"></app-search-result>
+  </div>
+  </div>
+  <div *ngIf="!searchResultList">
+    <div class="row">
+        <app-result-placeholder></app-result-placeholder>
+    </div>
+    </div>
+  </div>
+</div>
