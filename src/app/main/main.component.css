@@ -1,6 +1,9 @@
 .inputfile-container{
-    background:crimson; 
-    margin-top: 2vh; 
+    background:#f44336; 
+    width: 60%;
+    margin-top: 2vh;
+    margin-left: auto; 
+    margin-right: auto;
      
 }
 .inputfile-container:hover{
@@ -14,7 +17,6 @@
     opacity: 0;
     overflow: hidden;
     position: absolute;
-    background-color: aqua;
     z-index: 1;
 }
 
