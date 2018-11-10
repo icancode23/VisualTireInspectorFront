@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { SearchItem } from '../searchresult';
 import { GetItemsService } from '../get-items.service';
 
@@ -8,8 +8,9 @@ import { GetItemsService } from '../get-items.service';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-  selectedImage:any[];
-  searchResultList:SearchItem[];
+  @Input()selectedImage:any[];
+  @Input()searchResultList:SearchItem[];
+  @Output()fileUploaded=new EventEmitter<boolean>();
   constructor(private getItemService:GetItemsService) { }
 
 
@@ -20,6 +21,7 @@ export class MainComponent implements OnInit {
   handleImageUpload(event: any) {
     if (event.target.files && event.target.files[0]) {
       this.searchResultList=undefined;
+      this.fileUploaded.emit(true);
         var reader = new FileReader();
         reader.onload = (event: any) => {
             this.selectedImage = event.target.result;
