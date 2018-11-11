@@ -14,7 +14,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class GetItemsService {
-   dataUrl:string="http://104.196.225.164:8000/handleUpload/";
+   dataUrl:string="http://35.194.198.56:8000/handleUpload/";
    //dataUrl:string="http://localhost:4000/handleUpload/"
   constructor(private http: HttpClient) { 
     
