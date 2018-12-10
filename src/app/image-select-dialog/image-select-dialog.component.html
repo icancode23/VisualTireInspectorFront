@@ -1,0 +1,18 @@
+<div>
+  <h5 class="center-align">Crop to the area of interest</h5>
+
+<image-cropper
+    [imageChangedEvent]="imageChangedEvent"
+    [maintainAspectRatio]="false"
+    [aspectRatio]="1/1"
+    [resizeToWidth]="512"
+    format="png"
+    (imageCropped)="imageCropped($event)"
+    (imageLoaded)="imageLoaded()"
+    (loadImageFailed)="loadImageFailed()"
+    style="height: 60vh"
+></image-cropper>
+<div class="center-align" style="margin-top:8px">
+<a class="waves-effect center-align waves-light btn-small" (click)="onSubmitClick()">Done</a>
+</div>
+</div>
