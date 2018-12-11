@@ -33,8 +33,8 @@ export class MainComponent implements OnInit {
             this.selectedImage = event.target.result;
             console.log('The cropped image' + event.target.result);
         }
-      reader.readAsDataURL(result.base64);
-      this.getSearchResults(result.base64);
+      reader.readAsDataURL(result);
+      this.getSearchResults(result);
 
       
     });

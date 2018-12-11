@@ -14,7 +14,6 @@ export class ImageSelectDialogComponent implements OnInit {
 
   imageChangedEvent: any = '';
   croppedImage: any = '';
-  croppedImageFile:any='';
   data_d:DialogData;
   constructor(
     public dialogRef: MatDialogRef<ImageSelectDialogComponent>,
@@ -25,7 +24,7 @@ export class ImageSelectDialogComponent implements OnInit {
     }
 
   onSubmitClick(): void {
-    this.dialogRef.close({'file':this.croppedImageFile,'base64':this.croppedImage});
+    this.dialogRef.close(this.croppedImage);
   }
 
   ngOnInit() {
@@ -42,7 +41,6 @@ fileChangeEvent(event: any): void {
 }
 imageCropped(event: ImageCroppedEvent) {
     this.croppedImage = event.base64;
-    this.croppedImage=event.file;
 }
 imageLoaded() {
     // show cropper
