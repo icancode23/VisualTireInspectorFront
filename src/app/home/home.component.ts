@@ -33,8 +33,8 @@ export class HomeComponent implements OnInit {
             console.log('The cropped image' + event.target.result);
         }
       this.searchResultList=undefined;
-      reader.readAsDataURL(result);
-      this.getSearchResults(result);
+      reader.readAsDataURL(result.base64);
+      this.getSearchResults(result.base64);
 
       
     });
