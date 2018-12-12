@@ -79,7 +79,10 @@ this.getItemService.getItems(img).subscribe(
     for(var key in res){
       console.log(res[key]);
       var result=res[key];
-      this.searchResultList.push({name:result['name'],imgUrl:result['img'],price:result['price'],productUrl:result['href']});
+      var url=result['href'];
+        url=encodeURIComponent(url);
+        url="https://linksredirect.com/?pub_id=44915CL40514&source=linkkit&url="+url;
+      this.searchResultList.push({name:result['name'],imgUrl:result['img'],price:result['price'],productUrl:url});
     }
 
   },
