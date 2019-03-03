@@ -3,12 +3,17 @@
   <div class="card z-depth-5" style="height:60vh;width:100%;">
     <img [src]="selectedImage"  style="height: 100%;width:100%;">
   </div>
-  <div *ngIf="!searchResultList" class="center-align" style="margin-top:20%">
-      <div class="progress" style="width: 70%; margin:auto; background-color: #37474f">
+
+  <div class="center-align" style="margin-top:20%">
+      <div  *ngIf="!searchResultList"  class="progress" style="width: 70%; margin:auto; background-color: #37474f">
           <div class="indeterminate" style="background-color: rgb(104, 204, 5);
           "></div>
       </div>
-      <span class="white-text">Inspecting tyre for defects.....</span>
+      <span *ngIf="!searchResultList" class="white-text">Inspecting tyre for defects.....</span>
+      <span *ngIf="searchResultList"class="white-text">Time Elapsed</span>
+      <div>
+      <app-timer [running]="is_running"></app-timer>
+    </div>
   </div>
 
 </div>

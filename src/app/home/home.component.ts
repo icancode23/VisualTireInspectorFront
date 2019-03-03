@@ -78,19 +78,13 @@ this.getItemService.getItems(img).subscribe(
   res => {
     console.log("The response is : ")
     this.searchResultList=[];
-    for(var key in res){
-      console.log(res[key]);
-      var result=res[key];
-      var url=result['href'];
-        url=encodeURIComponent(url);
-        url="https://linksredirect.com/?pub_id=44915CL40514&source=linkkit&url="+url;
-      //this.searchResultList.push({name:result['name'],imgUrl:result['img'],price:result['price'],productUrl:url});
-    }
-    for(var i=0;i<4;++i){
-      if(i%2==0)
-        this.searchResultList.push({name:"Tread Wire Indicator",status:true,info:"Not present in the given tire image"});
-      else
-      this.searchResultList.push({name:"Tread Wire Indicator",status:false,info:"Not present in the given tire image"});
+    console.log("The response is : ")
+    console.log(res);
+    this.searchResultList=[];
+    var defects=["Liner Air","Bladder Crease","Scorched Rubber Tyre","Crown Deformation","Extruding Stamp Ink"];
+    for(var i=0;i<5;++i){
+      var s=res['result'][i]==0?false:true;
+      this.searchResultList.push({"name":defects[i],"status":s,"info":res['info'][i]});
     }
 
   },

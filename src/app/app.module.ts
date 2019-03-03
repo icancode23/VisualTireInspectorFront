@@ -24,6 +24,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { ImageCropperModule } from 'ngx-image-cropper';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ImageSelectDialogComponent } from './image-select-dialog/image-select-dialog.component';
+import { TimerComponent } from './timer/timer.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { ImageSelectDialogComponent } from './image-select-dialog/image-select-d
     ImagePanelHorizontalResultPaneComponent,
     TestComponent,
     HomeComponent,
-    ImageSelectDialogComponent
+    ImageSelectDialogComponent,
+    TimerComponent
   ],
   imports: [
     BrowserModule,

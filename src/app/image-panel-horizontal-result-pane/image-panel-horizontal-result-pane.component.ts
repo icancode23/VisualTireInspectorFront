@@ -12,4 +12,5 @@ export class ImagePanelHorizontalResultPaneComponent implements OnInit {
   ngOnInit() {
   }
 
+
 }

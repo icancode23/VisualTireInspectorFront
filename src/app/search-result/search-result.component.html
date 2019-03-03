@@ -19,10 +19,12 @@
           {{result.name}}
         </mat-panel-title>
         <mat-panel-description>
-         <img *ngIf="result.status" src="assets/defect.png" style="height:25px;
-         width:25px"/>
-         <img *ngIf="!result.status" src="assets/tick.png" style="height:25px;
-         width:25px">
+         <img *ngIf="!result.status" src="assets/defect.png" style="height:25px;
+         width:25px;
+         margin-left: auto"/>
+         <img *ngIf="result.status" src="assets/tick.png" style="height:25px;
+         width:25px;
+         margin-left: auto">
         </mat-panel-description>
       </mat-expansion-panel-header>
       <p>{{result.info}}</p>
