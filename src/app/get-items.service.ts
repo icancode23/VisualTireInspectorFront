@@ -14,7 +14,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class GetItemsService {
-   dataUrl:string="http://35.194.198.56:8000/handleUpload/";
+   dataUrl:string="http://127.0.0.1:8000/upload";
    //dataUrl:string="http://localhost:4000/handleUpload/"
   constructor(private http: HttpClient) { 
     
@@ -39,6 +39,7 @@ export class GetItemsService {
 
   getItems(image:File){
     let formData = new FormData();
+    console.log("Uploading file.......");
     formData.append('file', image);
     return this.http.post(this.dataUrl, formData, httpOptions).pipe(retry(3),
       catchError(this.handleError)

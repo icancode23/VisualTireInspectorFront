@@ -1,6 +1,6 @@
 export class SearchItem{
     name:string;
-    imgUrl:string;
-    price:string;
-    productUrl:string;
+    status:boolean;
+    info:string;
+    
 }

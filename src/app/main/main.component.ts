@@ -46,18 +46,29 @@ export class MainComponent implements OnInit {
   handleImageUpload(event: any) {
     if (event.target.files && event.target.files[0]) {
         this.imageChangedEvent=event;
-        console.log("handle image upload "+event);
-        this.openDialog(event);
-        // var reader = new FileReader();
-        // reader.onload = (event: any) => {
-        //     this.selectedImage = event.target.result;
+        console.log("handle image upload "+event.target.files[0]);
+        this.searchResultList=undefined;
+        var reader = new FileReader();
+        reader.onload = (event: any) => {
+            this.selectedImage = event.target.result;
+        }
+        reader.readAsDataURL(event.target.files[0]);
+        //this.searchResultList=[]
+        // for(var i=0;i<8;++i){
+        //   console.log("Challa");
+        //   if(i%2==0)
+        //     this.searchResultList.push({name:"Tread Wire Indicator",status:true,info:"Not present in the given tire image"});
+        //   else
+        //   this.searchResultList.push({name:"Tread Wire Indicator",status:false,info:"Not present in the given tire image"});
         // }
+        this.getSearchResults(event.target.files[0]);
+
        
     }
 }
 
 getSearchResults(img:any){
-  this.searchResultList=undefined;
+  
   
   console.log(img);
   var reader = new FileReader();
@@ -67,13 +78,19 @@ getSearchResults(img:any){
     res => {
       console.log("The response is : ")
       this.searchResultList=[];
-      for(var key in res){
-        console.log(res[key]);
-        var result=res[key];
-        var url=result['href'];
-        url=encodeURIComponent(url);
-        url="https://linksredirect.com/?pub_id=44915CL40514&source=linkkit&url="+url;
-        this.searchResultList.push({name:result['name'],imgUrl:result['img'],price:result['price'],productUrl:url});
+      // for(var key in res){
+      //   console.log(res[key]);
+      //   var result=res[key];
+      //   var url=result['href'];
+      //   url=encodeURIComponent(url);
+      //   url="https://linksredirect.com/?pub_id=44915CL40514&source=linkkit&url="+url;
+      //   this.searchResultList.push({name:result['name'],imgUrl:result['img'],price:result['price'],productUrl:url});
+      // }
+      for(var i=0;i<4;++i){
+        if(i%2==0)
+          this.searchResultList.push({name:"Tread Wire Indicator",status:true,info:"Not present in the given tire image"});
+        else
+        this.searchResultList.push({name:"Tread Wire Indicator",status:false,info:"Not present in the given tire image"});
       }
       this.fileUploaded.emit(this.searchResultList);
     },

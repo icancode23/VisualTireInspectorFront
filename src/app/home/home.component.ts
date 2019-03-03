@@ -56,11 +56,13 @@ handleImageUpload(event: any) {
       
       this.imageChangedEvent=event;
       console.log("handle image upload "+event);
-      this.openDialog(event);
-      // var reader = new FileReader();
-      // reader.onload = (event: any) => {
-      //     this.selectedImage = event.target.result;
-      // }
+      // this.openDialog(event);
+      var reader = new FileReader();
+      reader.onload = (event: any) => {
+          this.selectedImage = event.target.result;
+      }
+      reader.readAsDataURL(event.target.files[0]);
+      this.getSearchResults(event.target.files[0]);
      
   }
 }
@@ -82,7 +84,13 @@ this.getItemService.getItems(img).subscribe(
       var url=result['href'];
         url=encodeURIComponent(url);
         url="https://linksredirect.com/?pub_id=44915CL40514&source=linkkit&url="+url;
-      this.searchResultList.push({name:result['name'],imgUrl:result['img'],price:result['price'],productUrl:url});
+      //this.searchResultList.push({name:result['name'],imgUrl:result['img'],price:result['price'],productUrl:url});
+    }
+    for(var i=0;i<4;++i){
+      if(i%2==0)
+        this.searchResultList.push({name:"Tread Wire Indicator",status:true,info:"Not present in the given tire image"});
+      else
+      this.searchResultList.push({name:"Tread Wire Indicator",status:false,info:"Not present in the given tire image"});
     }
 
   },

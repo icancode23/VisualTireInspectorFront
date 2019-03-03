@@ -4,9 +4,18 @@
   </div>
   <div id="results" class="col s12 m8 l8 result-main-pane center-align" >
     <div *ngIf="searchResultList">
-    <h5>Look what we found for you!</h5>
+    <h5>Status : Defect Found !</h5>
   <div class="row">
-      <app-search-result *ngFor="let item of searchResultList" [result]="item"></app-search-result>
+      <div class="col s10 m8 l8 offset-s1 offset-m2 offset-l2">
+          <div class="card-panel white hoverable pulse">
+                <div class="center-align">
+                    <mat-accordion>
+                        <app-search-result *ngFor="let item of searchResultList" [result]="item"></app-search-result>
+                      </mat-accordion>
+                    </div>
+               </div>
+               </div>
+     
   </div>
   </div>
   <div *ngIf="!searchResultList">

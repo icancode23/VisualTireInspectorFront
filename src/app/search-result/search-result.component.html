@@ -1,4 +1,4 @@
-<div class="col s6 m3 l3">
+<!-- <div class="col s6 m3 l3">
     <div class="card-panel white hoverable ">
       <a [href]="result.productUrl" target="_blank">
         <div>
@@ -10,5 +10,21 @@
       <span class="blue-text">{{result.price}}</span>
       </a>
     </div>
-  </div>
-  
+  </div> -->
+
+
+  <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{result.name}}
+        </mat-panel-title>
+        <mat-panel-description>
+         <img *ngIf="result.status" src="assets/defect.png" style="height:25px;
+         width:25px"/>
+         <img *ngIf="!result.status" src="assets/tick.png" style="height:25px;
+         width:25px">
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>{{result.info}}</p>
+    </mat-expansion-panel>
+      
