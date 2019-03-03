@@ -14,7 +14,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class GetItemsService {
-   dataUrl:string="http://8f1d0282.ngrok.io/upload";
+   dataUrl:string="http://127.0.0.1:8000/upload";
    //dataUrl:string="http://localhost:4000/handleUpload/"
   constructor(private http: HttpClient) { 
     
